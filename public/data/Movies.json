@@ -1,0 +1,79 @@
+[
+  {
+    "id": 1,
+    "title": "The Dark Knight",
+    "year": 2008,
+    "genre": "Action, Crime, Drama",
+    "rating": 9.0,
+    "posterUrl": "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+    "description": "Batman faces the Joker in a fight over Gotham City's fate.",
+    "duration": 152,
+    "director": "Christopher Nolan"
+  },
+  {
+    "id": 2,
+    "title": "Alien",
+    "year": 1979,
+    "genre": "Science Fiction, Horror",
+    "rating": 8.4,
+    "posterUrl": "https://image.tmdb.org/t/p/w500/tc10ZcLZ9aXBq6A9xj9MNp9Pg1V.jpg",
+    "description": "The crew of the Nostromo encounters a deadly alien lifeform.",
+    "duration": 117,
+    "director": "Ridley Scott"
+  },
+  {
+    "id": 3,
+    "title": "Blade Runner",
+    "year": 1982,
+    "genre": "Science Fiction, Thriller",
+    "rating": 8.1,
+    "posterUrl": "https://image.tmdb.org/t/p/w500/7XmRU0YwLxBLm9cnI2zOQtaisbq.jpg",
+    "description": "A blade runner tracks down rogue replicants in future Los Angeles.",
+    "duration": 117,
+    "director": "Ridley Scott"
+  },
+  {
+    "id": 4,
+    "title": "Scream",
+    "year": 1996,
+    "genre": "Horror, Mystery",
+    "rating": 7.2,
+    "posterUrl": "https://image.tmdb.org/t/p/w500/9xsMxqyzvHQV2iO4J0Jx33eWb7p.jpg",
+    "description": "A masked killer stalks teens in Woodsboro.",
+    "duration": 111,
+    "director": "Wes Craven"
+  },
+  {
+    "id": 5,
+    "title": "Last Action Hero",
+    "year": 1993,
+    "genre": "Action, Comedy, Fantasy",
+    "rating": 6.4,
+    "posterUrl": "https://image.tmdb.org/t/p/w500/zKQRXQ5Sz4gp3Fh5QyaEA72O1JA.jpg",
+    "description": "A boy enters the world of his favorite action hero.",
+    "duration": 131,
+    "director": "John McTiernan"
+  },
+  {
+    "id": 6,
+    "title": "Millennium Actress",
+    "year": 2001,
+    "genre": "Animation, Drama",
+    "rating": 7.8,
+    "posterUrl": "https://image.tmdb.org/t/p/w500/b5OwcLWOvJGvV8EqvOOLV7MsqgY.jpg",
+    "description": "An actress reflects on her life and career.",
+    "duration": 87,
+    "director": "Satoshi Kon"
+  },
+  {
+    "id": 7,
+    "title": "Crisis",
+    "year": 2025,
+    "genre": "Documentary",
+    "rating": 7.1,
+    "posterUrl": "https://image.tmdb.org/t/p/w500/3BztDAsVhP2wZkKQjdnA9jtGQXI.jpg",
+    "description": "A look at a modern social crisis and systemic issues.",
+    "duration": 90,
+    "director": "Nicholas Jarecki"
+  }
+]
