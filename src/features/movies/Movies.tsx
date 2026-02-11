@@ -25,7 +25,7 @@ export default function Movies() {
 
 
   return (
-    <div className="mt-8">
+    <div className="pt-8 bg-blue-300">
       {loading ? (<p>Cargando</p>) : (<MovieList movies={movies!} />)}
     </div>
   );
