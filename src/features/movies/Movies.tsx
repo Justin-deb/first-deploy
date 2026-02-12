@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import type { Movie } from "../../models/movie.model";
 import MovieList from "./MovieList";
-import { getMovies } from "../../service/Movies.service";
+import { getMoviesFromJson } from "../../service/Movies.service";
 
 export default function Movies() {
   const [movies, setMovies] = useState<Movie[]>();
@@ -10,7 +10,7 @@ export default function Movies() {
   useEffect(() => {
     const loadMovies = async () => {
       try {
-        const movies: Movie[] = await getMovies();
+        const movies: Movie[] = await getMoviesFromJson();
 
         setMovies(movies);
       } catch (error) {
@@ -25,8 +25,8 @@ export default function Movies() {
 
 
   return (
-    <div className="pt-8 bg-blue-300">
-      {loading ? (<p>Cargando</p>) : (<MovieList movies={movies!} />)}
+    <div className="pt-8 bg-linear-to-b from-white to-black">
+      {loading ? (<p>Cargando</p>) : (<MovieList movies={movies!} isHome={false}/>)}
     </div>
   );
 }

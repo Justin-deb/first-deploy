@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import type { Movie } from "../../models/movie.model";
-import { getMovieByID } from "../../service/Movies.service";
+import { getMovieByIDFromJson } from "../../service/Movies.service";
 
 export default function MovieDetails() {
   const { id } = useParams<{ id: string }>();
@@ -11,7 +11,7 @@ export default function MovieDetails() {
   useEffect(() => {
     const loadMovie = async () => {
       try {
-        const data:Movie | undefined = await getMovieByID(Number.parseInt(id!));
+        const data:Movie | undefined = await getMovieByIDFromJson(Number.parseInt(id!));
         setMovie(data);
         console.log(await data);
       } catch (error) {
