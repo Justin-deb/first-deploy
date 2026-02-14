@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
-import type { Movie } from "../../models/movie.model";
 import MovieList from "./MovieList";
-import { getMovies } from "../../service/Movies.service";
+import { getPopularMovies } from "../../service/Movies.service";
+import type { MovieDB } from "../../models/MovieDB.model";
 
 export default function Movies() {
-  const [movies, setMovies] = useState<Movie[]>();
+  const [movies, setMovies] = useState<MovieDB[]>();
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const loadMovies = async () => {
       try {
-        const movies: Movie[] = await getMovies();
+        const movies: MovieDB[] = await getPopularMovies();
 
         setMovies(movies);
       } catch (error) {
@@ -25,8 +25,8 @@ export default function Movies() {
 
 
   return (
-    <div className="pt-8 bg-blue-300">
-      {loading ? (<p>Cargando</p>) : (<MovieList movies={movies!} />)}
+    <div className="pt-8 bg-linear-to-b from-white to-black">
+      {loading ? (<p>Cargando</p>) : (<MovieList movies={movies!} isHome={false}/>)}
     </div>
   );
 }

@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import type { Movie } from "../../models/movie.model";
 import { getMovieByID } from "../../service/Movies.service";
+import type { MovieDB } from "../../models/MovieDB.model";
 
 export default function MovieDetails() {
   const { id } = useParams<{ id: string }>();
-  const [movie, setMovie] = useState<Movie | null>();
+  const [movie, setMovie] = useState<MovieDB | null>();
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const loadMovie = async () => {
       try {
-        const data:Movie | undefined = await getMovieByID(Number.parseInt(id!));
+        const data:MovieDB | undefined = await getMovieByID(id!);
         setMovie(data);
         console.log(await data);
       } catch (error) {
