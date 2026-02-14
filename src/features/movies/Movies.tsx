@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
-import type { Movie } from "../../models/movie.model";
 import MovieList from "./MovieList";
-import { getMoviesFromJson } from "../../service/Movies.service";
+import { getPopularMovies } from "../../service/Movies.service";
+import type { MovieDB } from "../../models/MovieDB.model";
 
 export default function Movies() {
-  const [movies, setMovies] = useState<Movie[]>();
+  const [movies, setMovies] = useState<MovieDB[]>();
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const loadMovies = async () => {
       try {
-        const movies: Movie[] = await getMoviesFromJson();
+        const movies: MovieDB[] = await getPopularMovies();
 
         setMovies(movies);
       } catch (error) {

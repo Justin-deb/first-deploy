@@ -1,4 +1,5 @@
 import type { Movie } from "../models/movie.model";
+import type { MovieDB } from "../models/MovieDB.model";
 
 const MOVIE_URL = "../../data/Movies.json";
 
@@ -34,7 +35,7 @@ export async function getMovieByIDFromJson(
   return movie;
 }
 
-export async function getPopularMovies(): Promise<Movie[]> {
+export async function getPopularMovies(): Promise<MovieDB[]> {
   const res = await fetch(
     `${MOVIE_DB_URL}/movie/popular?api_key=${MOVIE_API_KEY}`,
   );
@@ -45,12 +46,12 @@ export async function getPopularMovies(): Promise<Movie[]> {
     );
   }
 
-  const data: Movie[] = await res.json();
+  const data = await res.json();
 
-  return data;
+  return data.results;
 }
 
-export async function getMovieByName(name: string): Promise<Movie[]> {
+export async function getMovieByName(name: string): Promise<MovieDB[]> {
   const res = await fetch(
     `${MOVIE_DB_URL}/search/movie?api_key=${MOVIE_API_KEY}&query=${encodeURIComponent(name)}`,
   );
@@ -61,7 +62,19 @@ export async function getMovieByName(name: string): Promise<Movie[]> {
     );
   }
 
-  const data: Movie[] = await res.json();
+  const data: MovieDB[] = await res.json();
+
+  return data;
+}
+
+export async function getMovieByID(id:string):Promise<MovieDB>{
+  const res = await fetch(`${MOVIE_DB_URL}/movie/${id}?api_key=${MOVIE_API_KEY}`);
+
+  if(!res.ok){
+    throw new Error(`Couldn't get movies from the database (status:${res.status})`);
+  }
+
+  const data:MovieDB = await res.json();
 
   return data;
 }
