@@ -62,9 +62,9 @@ export async function getMovieByName(name: string): Promise<MovieDB[]> {
     );
   }
 
-  const data: MovieDB[] = await res.json();
+  const data = await res.json();
 
-  return data;
+  return data.results;
 }
 
 export async function getMovieByID(id:string):Promise<MovieDB>{

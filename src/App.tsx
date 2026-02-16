@@ -5,6 +5,7 @@ import Movies from "./features/movies/Movies";
 import "./App.css";
 import MovieDetails from "./features/movies/MovieDetails";
 import MainLayout from "./shared/layout/MainLayout";
+import SearchMovie from "./features/search/SearchMovie";
 
 function App() {
   const routes = createBrowserRouter(
@@ -13,6 +14,8 @@ function App() {
         <Route index element={<Home/>}/>
         <Route path="/movies" element={<Movies />}/>
         <Route path="/movies/:id" element={<MovieDetails />} />
+        <Route path="/search/:name" element={<MovieDetails />} />
+        <Route path="/search" element={<SearchMovie/>}/>
 
         <Route path="*" element={<NotFound />} />
       </Route>

@@ -21,6 +21,9 @@ export default function Header() {
               <NavLink to="/movies" className={selected}>
                 <p>Movies</p>
               </NavLink>
+              <NavLink to="/search" className={selected}>
+                <p>Search</p>
+              </NavLink>
             </div>
           </div>
         </div>
