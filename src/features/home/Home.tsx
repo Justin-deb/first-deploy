@@ -25,7 +25,7 @@ export function Home() {
 
   return (
     <div className="bg-linear-to-b from-white to-black space-y-5 ">
-      <h1 className="text-center text-5xl">Welcome to the Movie catalogue web page</h1>
+      <h1 className="text-center text-5xl">Welcome to the Movie catalog web page</h1>
       <p className="text-center text-3xl">Here are some movies you can learn about.</p>
       {loading ? <p>loading</p>: <MovieList movies={movies!} />}
       <div className="text-center py-10 ">
