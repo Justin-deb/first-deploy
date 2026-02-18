@@ -6,7 +6,7 @@ export default function MovieCard({movie}:{movie:MovieDB}) {
   return (
     <div>
       <Link to={`/movies/${movie.id}`} className="group block ">
-        <article className="rounded-3xl bg-black  p-3 shadow-sm ring-1 hover:bg-neutral-200 min:h-140">
+        <article className="rounded-3xl bg-black  p-3 shadow-sm ring-1 hover:bg-neutral-400 min:h-140 md:max-w-90">
           <div className="relative overflow-hidden rounded-2xl p-2 space-y-3">
             <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="Image" className="rounded-sm w-80 h-96" />
             <p className="text-white text-2xl">{movie.title}</p>

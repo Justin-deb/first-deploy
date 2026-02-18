@@ -7,10 +7,12 @@ export default function MovieList({movies,isHome=true}:{movies:MovieDB[],isHome?
   const style = 'grid sm:grid-cols-2 md:grid-cols-3 ' + (isHome ? ' gap-20 lg:grid-cols-3':' gap-3 lg:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-8')
 
   if(isHome){
-    movies = movies.slice(0,3);
+    movies = movies.slice(0,6);
   }
   
   return (
+    <>
+    {!isHome ? (<p className="text-6xl px-4 pb-5">Popular Movies Today</p>) : (<></>)}
     <div className="max-w-96 mx-auto sm:max-w-max px-4 py-6 ">
       <div className={style}>
         {movies.map((movie) => (
@@ -18,5 +20,6 @@ export default function MovieList({movies,isHome=true}:{movies:MovieDB[],isHome?
         ))}
       </div>
     </div>
+    </>
   );
 }

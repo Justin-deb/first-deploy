@@ -13,7 +13,6 @@ export default function MovieDetails() {
       try {
         const data:MovieDB | undefined = await getMovieByID(id!);
         setMovie(data);
-        console.log(await data);
       } catch (error) {
         console.log(error);
       }finally{
@@ -40,8 +39,8 @@ export default function MovieDetails() {
 
   return (
     <div className="mt-grid">
-      <h1 className="text-5xl pl-3">Movie Details</h1>
-      <div className="">
+      <h1 className="text-4xl pl-3">Movie Details</h1>
+      <div className=" bg-neutral-400 ">
         {movie?.title}
       </div>
     </div>
