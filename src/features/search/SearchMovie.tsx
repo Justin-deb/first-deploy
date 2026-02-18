@@ -3,6 +3,7 @@ import type { MovieDB } from "../../models/MovieDB.model";
 import { getMovieByName } from "../../service/Movies.service";
 import GridSpinner from "../loader/GridSpinner";
 import MovieList from "../movies/MovieList";
+import { IoIosSearch } from "react-icons/io";
 
 const SearchMovie = () => {
     const [movie, setMovie] = useState<MovieDB[]>();
@@ -20,12 +21,12 @@ const SearchMovie = () => {
     const [bgStyleString, setBgStyleString] = useState<string>(bgStyle({ isScreenEmpty: true }));
 
     useEffect(() => {
-        if(!movie || movie.length === 0 || searching){
-            setBgStyleString(bgStyle({isScreenEmpty:true}));
-        }else if(movie){
-            setBgStyleString(bgStyle({isScreenEmpty:false}));
+        if (!movie || movie.length === 0 || searching) {
+            setBgStyleString(bgStyle({ isScreenEmpty: true }));
+        } else if (movie) {
+            setBgStyleString(bgStyle({ isScreenEmpty: false }));
         }
-    }, [loading,movie,searching]);
+    }, [loading, movie, searching]);
 
     const handleClick = async () => {
         setSearching(false);
@@ -41,15 +42,15 @@ const SearchMovie = () => {
     }
 
     const onChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-        if(event.target.value.length === 0) setSearching(true);
+        if (event.target.value.length === 0) setSearching(true);
         setMovieName(event.target.value);
     }
 
     const listOfMovies = (): ReactNode => {
-        if(searching){
+        if (searching) {
             return;
         }
-        
+
         if (loading) {
             return <GridSpinner loading={loading} />
         }
@@ -59,7 +60,7 @@ const SearchMovie = () => {
         }
 
         if (movie && !loading) {
-            return <MovieList movies={movie} />
+            return <MovieList movies={movie} isHome={false}/>
         }
 
         return <p>Esto es una prueba</p>
@@ -69,9 +70,14 @@ const SearchMovie = () => {
         <div className={bgStyleString}>
             <p className="text-3xl text-center px-10 pt-3">Search a movie you want to learn about</p>
             <div className="flex justify-center py-4 ">
-                <div className="border-2 rounded-4xl text-3xl ">
-                    <input type="text" placeholder="Search" className="focus:outline-none pl-3 w-260" onChange={onChangeHandler} value={movieName} />
-                    <button className="border-l-2 px-4 cursor-pointer hover:bg-neutral-300 hover:rounded-r-4xl" onClick={handleClick}>Search</button>
+                <div className="border-2 rounded-4xl text-3xl flex">
+                    <input type="text" placeholder="Movie name..." className="focus:outline-none pl-3 w-60 lg:w-223 xl:w-260" onChange={onChangeHandler} value={movieName}/>
+                    <button className="px-4 my-1 mx-2 cursor-pointer bg-neutral-500 rounded-4xl hover:bg-neutral-600 hover:rounded-r-4xl " onClick={handleClick}>
+                        <div className="">
+                            <IoIosSearch />
+                        </div>
+                        
+                    </button>
                 </div>
             </div>
 

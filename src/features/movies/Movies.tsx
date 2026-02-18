@@ -26,6 +26,7 @@ export default function Movies() {
 
   return (
     <div className="pt-8 bg-linear-to-b from-white to-black">
+      <p className="text-6xl px-4 pb-5">Popular Movies Today</p>
       {loading ? (<p>Cargando</p>) : (<MovieList movies={movies!} isHome={false}/>)}
     </div>
   );
