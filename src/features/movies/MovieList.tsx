@@ -12,7 +12,6 @@ export default function MovieList({movies,isHome=true}:{movies:MovieDB[],isHome?
   
   return (
     <>
-    {!isHome ? (<p className="text-6xl px-4 pb-5">Popular Movies Today</p>) : (<></>)}
     <div className="max-w-96 mx-auto sm:max-w-max px-4 py-6 ">
       <div className={style}>
         {movies.map((movie) => (
